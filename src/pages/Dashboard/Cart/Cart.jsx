@@ -38,7 +38,7 @@ const Cart = () => {
     <div>
       <div className="flex justify-between mb-8">
         <h2 className="text-2xl">Items: {cart.length}</h2>
-        <h2 className="text-2xl">Total Price: {totalPrice}</h2>
+        <h2 className="text-2xl">Total Price: {totalPrice.toFixed(2)}</h2>
         <button className="px-4 py-1 bg-slate-100 rounded-lg border border-indigo-500 text-indigo-500">
           Pay
         </button>
