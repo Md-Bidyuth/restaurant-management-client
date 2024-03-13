@@ -1,3 +1,4 @@
+import { TbCurrencyTaka } from "react-icons/tb";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
@@ -57,12 +58,13 @@ const FoodCard = ({ item }) => {
       <figure className="">
         <img src={image} alt="" />
       </figure>
-      <div className="p-2 space-y-2">
+      <div className="flex flex-col flex-1 p-2 space-y-2">
         <h2 className="card-title">{name}</h2>
-        <p>{recipe}</p>
+        <p className="flex-grow">{recipe}</p>
         <div className="card-actions justify-around items-center">
-          <p className="text-orange-600 bg-base-300 px-4 py-2 rounded-xl">
-            Price : ${price}
+          <p className=" text-orange-600 bg-base-300 px-4 py-2 rounded-xl">
+            Price :<TbCurrencyTaka className="inline mb-1"></TbCurrencyTaka>
+            {price}
           </p>
           <button
             onClick={handleAddToCart}

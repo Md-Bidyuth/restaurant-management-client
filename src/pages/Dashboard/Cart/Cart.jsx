@@ -96,12 +96,10 @@ const Cart = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(item._id)}
-                    className="flex items-center gap-1 text-xs bg-slate-100 py-1 shadow-lg px-2 rounded-xl border border-black hover:border-red-500"
+                    className="flex items-center gap-1 text-xs hover:text-red-600 bg-slate-100 py-1 shadow-lg px-2 rounded-xl hover:rounded-lg border border-black hover:border-red-500"
                   >
                     <BsTrashFill className="text-red-600"></BsTrashFill>
-                    <span className="font-semibold hover:text-red-500">
-                      Delete
-                    </span>
+                    <span className="font-semibold">Delete</span>
                   </button>
                 </td>
               </tr>
