@@ -1,5 +1,7 @@
 import { BsTrashFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Divider from "../../../components/Divider/Divider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useCart from "../../../hooks/useCart";
 const Cart = () => {
@@ -38,16 +40,19 @@ const Cart = () => {
     <div>
       <div className="flex justify-between mb-8">
         <h2 className="text-2xl">Items: {cart.length}</h2>
-        <h2 className="text-2xl">Total Price: {totalPrice.toFixed(2)}</h2>
-        <button className="px-4 py-1 bg-slate-100 rounded-lg border border-indigo-500 text-indigo-500">
-          Pay
-        </button>
+        <h2 className="text-2xl">Total Price: {totalPrice.toFixed(0)}</h2>
+        {cart.length ? (
+          <Link to="/dashboard/payment">
+            <button className="px-4 py-1 bg-slate-100 rounded-lg border border-indigo-500 text-indigo-500">
+              Pay
+            </button>
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
-      <div className="divider divider-neutral">
-        <span className="bg-indigo-400 text-white px-2 pb-[2px] rounded-full">
-          Happy Bites
-        </span>
-      </div>
+
+      <Divider title={"Happy Bites"}></Divider>
       <div className="overflow-x-auto">
         <table className="table  w-600">
           {/* head */}

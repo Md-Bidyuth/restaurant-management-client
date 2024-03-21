@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { BsTrashFill } from "react-icons/bs";
 import Swal from "sweetalert2";
+import Divider from "../../../components/Divider/Divider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const AllUsers = () => {
@@ -72,16 +73,13 @@ const AllUsers = () => {
         <h2 className="text-2xl">All Users</h2>
         <h2 className="text-2xl">Total Users : {users.length}</h2>
       </div>
-      <div className="divider divider-neutral">
-        <span className="bg-indigo-400 text-white px-2 pb-[2px] rounded-full">
-          Happy Bites
-        </span>
-      </div>
+
+      <Divider title={"Happy Bites"}></Divider>
       {/*users table */}
       <div className="overflow-x-auto">
         <table className="table ">
           {/* head */}
-          <thead className="">
+          <thead className="border border-b-slate-100">
             <tr>
               <th className="text-lg font-semibold">SL No.</th>
               <th className="text-lg font-bold">Name</th>
@@ -94,33 +92,33 @@ const AllUsers = () => {
           <tbody>
             {users.map((user, index) => (
               <tr key={user._id}>
-                <th className="font-normal">{index + 1}</th>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>Normal</td>
-                <td>
+                <th className="font-normal border border-b-white">
+                  {index + 1}
+                </th>
+                <td className="border border-b-white">{user.name}</td>
+                <td className="border border-b-white">{user.email}</td>
+                <td className="border border-b-white">Normal</td>
+                <td className="border border-b-white">
                   {user.role === "admin" ? (
-                    <span className="text-xs bg-slate-50 px-1 py-[1px] rounded-lg ml-2">
+                    <span className="text-xs bg-slate-100 px-1 py-[1px] rounded-lg ml-2">
                       Admin
                     </span>
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user)}
-                      className="flex items-center gap-1 text-xs text-indigo-600 hover:text-white bg-slate-100 hover:bg-indigo-400 py-1 shadow-lg px-2 rounded-xl border border-indigo-400 font-semibold"
+                      className="flex items-center gap-1 text-xs text-indigo-600 hover:text-indigo-800 bg-slate-100 py-1 shadow-lg px-2 rounded-xl border border-transparent hover:border-indigo-400 font-semibold"
                     >
                       Make Admin
                     </button>
                   )}
                 </td>
-                <td>
+                <td className="border border-b-white">
                   <button
                     onClick={() => handleDeleteUser(user)}
-                    className="flex items-center gap-1 text-xs bg-slate-100  py-1 shadow-lg px-2 rounded-xl border border-indigo-500 hover:border-red-500  text-red-500 "
+                    className="flex items-center gap-1 text-xs text-indigo-600 hover:text-red-600 bg-slate-100 py-1 shadow-lg px-2 rounded-xl hover:rounded-lg border border-transparent hover:border-red-500"
                   >
-                    <BsTrashFill className=""></BsTrashFill>
-                    <span className="text-indigo-500 hover:text-red-500 font-semibold ">
-                      Delete
-                    </span>
+                    <BsTrashFill className="text-red-600"></BsTrashFill>
+                    <span className="font-semibold">Delete</span>
                   </button>
                 </td>
               </tr>
