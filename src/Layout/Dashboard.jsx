@@ -3,6 +3,7 @@ import { BiSolidFoodMenu } from "react-icons/bi";
 import { FaCalendarAlt, FaHome, FaShoppingCart } from "react-icons/fa";
 import { FaUserGroup } from "react-icons/fa6";
 import { ImSpoonKnife } from "react-icons/im";
+
 import {
   MdFeaturedPlayList,
   MdLibraryBooks,
@@ -86,9 +87,9 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/bookings">
+                <NavLink to="/dashboard/paymentHistory">
                   <MdFeaturedPlayList></MdFeaturedPlayList>
-                  My Bookings
+                  Payment History
                 </NavLink>
               </li>
             </>
