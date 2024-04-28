@@ -54,13 +54,15 @@ const FoodCard = ({ item }) => {
     }
   };
   return (
-    <div className="card bg-base-100 shadow-lg border border-green-600 p-[2px] ">
+    <div className="card bg-base-100 shadow-lg border border-black p-[2px]">
       <figure className="">
-        <img src={image} alt="" />
+        <img src={image} alt="" className="w-full h-52 " />
       </figure>
       <div className="flex flex-col flex-1 p-2 space-y-2">
-        <h2 className="card-title">{name}</h2>
-        <p className="flex-grow">{recipe}</p>
+        <h2 className="card-title bg-purple-100 px-3 py-1 rounded-xl">
+          {name}
+        </h2>
+        <p className="h-20 flex-grow overflow-y-scroll">{recipe}</p>
         <div className="card-actions justify-around items-center">
           <p className=" text-orange-600 bg-base-300 px-4 py-2 rounded-xl">
             Price :<TbCurrencyTaka className="inline mb-1"></TbCurrencyTaka>

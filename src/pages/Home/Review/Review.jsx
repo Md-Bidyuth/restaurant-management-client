@@ -11,7 +11,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://restaurant-management-server-sepia.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

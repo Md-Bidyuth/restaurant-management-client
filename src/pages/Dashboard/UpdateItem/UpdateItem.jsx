@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { FaUtensils } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Divider from "../../../components/Divider/Divider";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
@@ -10,6 +10,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const UpdateItem = () => {
   const { name, recipe, category, image, price, _id } = useLoaderData();
+  const navigate = useNavigate();
   //   const imgFileName = image.split("/")[4];
   const { register, handleSubmit, reset } = useForm();
   const axiosPublic = useAxiosPublic();
@@ -44,6 +45,7 @@ const UpdateItem = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/dashboard/manageItems");
       }
     }
     console.log("with img url", res.data);

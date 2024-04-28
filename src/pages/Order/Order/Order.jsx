@@ -20,6 +20,7 @@ const Order = () => {
   const salad = menu.filter((item) => item.category === "salad");
   const pizza = menu.filter((item) => item.category === "pizza");
   const drinks = menu.filter((item) => item.category === "drinks");
+  const all = [...pizza, ...salad, ...desserts, ...drinks];
   return (
     <div>
       <Helmet>

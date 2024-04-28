@@ -1,5 +1,6 @@
 import React from "react";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { Link } from "react-router-dom";
+import Divider from "../../../components/Divider/Divider.jsx";
 import useMenu from "../../../hooks/useMenu";
 import MenuItem from "../../Shared/MenuItem/MenuItem";
 
@@ -9,18 +10,24 @@ const PopularMenu = () => {
 
   return (
     <section className="flex flex-col items-center mb-8">
-      <SectionTitle
+      {/* <SectionTitle
         heading={"popular items"}
         subHeading={"From Our Menu"}
-      ></SectionTitle>
+      ></SectionTitle> */}
+
+      <p className="pb-12"></p>
+      <Divider title={"Popular Items"}></Divider>
+
       <div className="grid md:grid-cols-2 gap-8 m-10">
         {popular.map((item) => (
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}
       </div>
-      <button className="btn btn-outline bg-slate-200 border-0 border-b-4 text-black hover:border-slate-600">
-        View All Items
-      </button>
+      <Link to="/order/offered">
+        <button className="btn btn-outline bg-indigo-400 border-0 border-b-4 text-white border-slate-700 hover:border-slate-600">
+          View All Items
+        </button>
+      </Link>
     </section>
   );
 };

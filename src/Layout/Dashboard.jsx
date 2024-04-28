@@ -26,7 +26,6 @@ const Dashboard = () => {
       {/* dashboard sidebar*/}
       <div className="w-64 min-h-screen bg-indigo-400 text-white font-semibold">
         <ul className="menu">
-          {/* --------general logged user nav links--------- */}
           {isAdmin ? (
             <>
               <li>
@@ -109,7 +108,7 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/order/contact">
+            <NavLink to="/contact">
               <PiPhoneCallFill></PiPhoneCallFill>
               Contact
             </NavLink>
